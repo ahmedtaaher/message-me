@@ -1,0 +1,15 @@
+.navbar {
+  background-color: black !important;
+}
+.nav-link {
+  color: white !important;
+}
+.border-orange {
+  border-color: #f2711c !important; /* Semantic UI orange */
+}
+.list-group-item a {
+  text-decoration: none;
+}
+.list-group-item a:hover {
+  text-decoration: underline;
+}
