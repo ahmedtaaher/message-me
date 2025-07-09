@@ -9,23 +9,23 @@
       <div class="card p-4">
         <div class="row align-items-center">
           <div class="col-md-6 border-end">
-            <form>
+            <%= form_with(scope: :session, url: login_path, local: true, data: { turbo: false }) do |f| %>
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <div class="input-group">
                   <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                  <input type="text" class="form-control" id="username" placeholder="Username">
+                  <%= f.text_field :username, class: "form-control", id: "username", placeholder: "Username" %>
                 </div>
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group">
                   <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
+                  <%= f.password_field :password, class: "form-control", id: "password", placeholder: "Password" %>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
+              <%= f.submit "Login", class: "btn btn-primary w-100" %>
+            <% end %>
           </div>
 
           <div class="col-md-1 text-center">

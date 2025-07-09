@@ -16,9 +16,9 @@
                     </div>
                 </div>
                 <div class="card-footer p-2">
-                    <%= form_for(@message, html: { class: "d-flex", role: "form" }, url: message_path, local: true, data: { turbo: false }) do |f| %>
+                    <%= form_with(model: @message, html: { class: "d-flex", role: "form" }, url: message_path, local: true, data: { turbo: false }) do |f| %>
                         <div class="input-group w-100">
-                            <%= f.text_area :body, placeholder: "Type a message...", class: "form-control", rows: 1 %>
+                            <%= f.text_field :body, placeholder: "Type a message...", class: "form-control", rows: 1 %>
                             <%= f.submit "Send", class: "btn btn-primary" %>
                         </div>
                     <% end %>
