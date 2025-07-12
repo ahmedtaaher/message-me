@@ -10,6 +10,12 @@ consumer.subscriptions.create("ChatroomChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
-  }
+  const container = document.getElementById("message-container");
+  if (container) {
+  container.insertAdjacentHTML("beforeend", data.mod_message);
+  container.scrollTop = container.scrollHeight;
+}
+  const input = document.querySelector("input[name='message[body]']");
+  if (input) input.value = "";
+}
 });
